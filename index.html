@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aithos Tech - Conectando Ciência e Tecnologia para o Futuro. Especialistas em IA, Sistemas Quânticos e Engenharia Avançada." />
+    <meta name="description" content="Aithos Tech - Landing Pages Profissionais por R$ 30. Desenvolvimento web premium, IA integrada e atendimento automatizado." />
+    <meta name="keywords" content="aithos tech, landing page, desenvolvimento web, R$ 30, hospedagem, atendimento automatizado, IA" />
+    <meta name="author" content="Aithos Tech" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Aithos Tech - Landing Pages por R$ 30" />
+    <meta property="og:description" content="Landing Pages Profissionais com Atendimento Automatizado" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aithostech.com" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <title>Aithos Tech - Landing Pages por R$ 30 | Desenvolvimento Web Premium</title>
+    
+    <style>
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+      
+      /* Loading Screen */
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-logo {
+        width: 80px;
+        height: 80px;
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.1); opacity: 0.7; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading">
+      <svg class="loading-logo" viewBox="0 0 60 60">
+        <defs>
+          <linearGradient id="loadingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8B0000" />
+            <stop offset="50%" stop-color="#DC143C" />
+            <stop offset="100%" stop-color="#8B0000" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M30 5 L45 50 L37 50 L33 38 L27 38 L23 50 L15 50 L30 5 Z M29 25 L31 25 L32 22 L28 22 Z"
+          fill="url(#loadingGradient)"
+        />
+      </svg>
+    </div>
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <script>
+      // Hide loading screen when page loads
+      window.addEventListener('load', () => {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.opacity = '0';
+          setTimeout(() => {
+            loading.style.display = 'none';
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>
